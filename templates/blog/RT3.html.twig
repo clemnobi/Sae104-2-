@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .RT3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+    .card {
+        max-width: %;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .card img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .card-body {
+        padding: 1em;
+        text-align: center;
+    }
+</style>
+
+<div class="RT3">
+    <h1>Mon E-Portfolio</h1>
+    <p>Sur cette page est présenté mon E-Portfolio basé sur le portfolio se trouvant sur mon drive</p>
+
+    <div class="card">
+        <div class="card-body">
+            <p>Lors de mon parcors dans le BUT Réseau et Télécommunicationsj'ai appris différentes choses dans le monde du réseau:</p>
+            <ul>
+                <li>J'ai tout d'abord apris l'utilisation d'un systéme informatique et de ses outils de travail tel que Linuxx par exemple afin d'avoir un anvironement de travail différent de celui que j'utilise d'habitude .</li>
+<br>
+                <li>J'ai aussi apris par la suite la crétaion d'algorithme pour un programme informatique mais aussi la maniére de le convertir en un codee en langage c et en langage python ainsi que la faculté de trouver et réparer les erreurs suceptible d'apparaitre dans un programme. Tout cela grace aux compétences AC13.02 : Lire,éxécuter,corriger et modifier un programme. Mais aussi grace à la Compétence AC13.03:Traduire un algorithme dans un langage et pour un environement donner.</li>
+                <img src="{{asset('image/c.jpg')}}"> <br><br>  <img src="{{asset('image/python.jpg')}}">  <br>
+<br>
+                <li>Dans un même temps j'ai aussi appris la conseption de site internet par du code html mais aussi par le biais de l'outil Symfony utilisé justement pour la crétaion de ce site afin de me présenter sur internet. Cet apprentissage étant lier à la compétences AC13.04: Connaitre l'architecture et les technologies d'un site WEB</li>
+                <img src="{{asset('image/html.jpg')}}"> <br><br>  <img src="{{asset('image/Symfony2.jpg')}}">
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

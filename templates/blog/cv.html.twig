@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="container mt-4">
+    <h1>Mon CV</h1>
+    <h3>Intitulé du poste de mes rêves : Programmeur Informatique</h3>
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Profil</h5>
+            <ul>
+                <li><strong>Nom:</strong> Caron</li>
+                <li><strong>Prénom:</strong> Clément</li>
+                <li><strong>Sate de naissance:</strong> 11/09/2005</li>
+                <li><strong>Adresse mail:</strong> clementcaron855@gmail.com</li>
+                <li><strong>Numéro de téléphone</strong>07 68 90 28 34</li>
+                <li><strong>Moyen de déplacement</strong> Voiture sans permis</li>
+                <p>Etudiant en BUT réseau et télécommunication à l’IUT de Roanne je suis à la recherche d’un travail dans la programmation afin de mettre mes études à profit.
+                <br>
+                Je suis quelqu’un de sociable, poli et respectueux qui apprécie le travail informatique. Je sais être organisée j’apprécie le travail d’équipe.
+                Je suis atteint d’un strabisme (j’ai une déficience visuelle), je sais m’adapter. 
+
+            </ul>
+        </div>
+    </div>
+<br>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Formations</h5>
+            <ul>
+                <li><strong>BUT Génie Electronique et Informatique Industriel à Saint-Etienne (2023)</li>
+                <li><strong>BUT Réseaux et télécom à Roanne(2024)</li>
+            </ul>
+        </div>
+    </div>
+<br>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Formation professionnelle</h5>
+            <ul>
+                <li><strong>janvier 2020: Stage à la boulangerie Dupuis à Renaison.</li>
+                <li><strong>aout 2023: Job d'été en suremballage à la Ferme Collet(Reniason).</li>
+            </ul>
+        </div>
+    </div>
+<br>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Compétences</h5>
+            <ul>
+                <li>Développement de site web en html sous le logiciel Symfony</li>
+                <li>Conception d’un algorithme et compréhension de celui-ci</li>
+                <li>Traduction d’un algorithme en langage c et/ou python</li>
+            </ul>
+        </div>
+    </div>
+<br>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Cebtre d'intéret</h5>
+            <ul>
+                <li>Mangas</li>
+                <li>Jeux vidéos</li>
+            </ul>
+        </div>
+    </div>
+    <h2 class="titre">Télécharger</h2>
+    <form id="telechargerForm" onsubmit="return handleFormSubmit(event)">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required><br>
+        <br>
+        <label for="prenom">Prénom :</label>
+        <input type="text" id="prenom" name="prenom" required><br>
+        <br>
+        <label for="email">E-mail :</label>
+        <input type="email" id="email" name="email" required><br>
+        <br>
+        <button type="submit" class="btn btn-primary">Confirmer</button>
+    </form>
+
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Empêche l'envoi classique du formulaire
+
+            // Récupère les valeurs des champs
+            const nom = document.getElementById('nom').value.trim();
+            const prenom = document.getElementById('prenom').value.trim();
+            const email = document.getElementById('email').value.trim();
+
+            // Vérifie si tous les champs sont remplis
+            if (!nom || !prenom || !email) {
+                alert("Veuillez remplir tous les champs avant de confirmer.");
+                return false;
+            }
+
+            // Si les champs sont valides, lance le téléchargement
+            const downloadLink = document.createElement('a');
+            downloadLink.href = '/image/cv.pdf'; // Chemin du fichier à télécharger
+            downloadLink.download = 'cv.pdf';
+            downloadLink.click();
+
+            return true;
+        }
+    </script>
+</div>
+{% endblock %}

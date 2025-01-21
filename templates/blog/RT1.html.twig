@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    .RT1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+    .card {
+        max-width: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .card img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .card-body {
+        padding: 1em;
+        text-align: center;
+    }
+</style>
+
+<div class="RT1">
+    <h1>Mon E-Portfolio</h1>
+    <p>Sur cette page est présenté mon E-Portfolio basé sur le portfolio se trouvant sur mon drive</p>
+
+    <div class="card">
+        <div class="card-body">
+            <p>Lors de mon parcors dans le BUT Réseau et Télécommunicationsj'ai appris différentes choses dans le monde du réseau:</p>
+            <ul>
+                <li>Tout d'abord j'ai appris comment analyser un signal électrique dans un circuit en me servant des différents appareils comme le multimétre, le GBF.J'ai aussi appris la connaissance des EPI afin de pouvoir sécuriser les équipement électrique ainsi que ma propre santé lors de la pratique avec des circuits électrique. Tout cela était en lien avec la compétences critisue AC11,01 - Maitriser les fondamentaux de l'électricité afin d'intervenir sur des équipements de réseau et télécomuniation .</li>
+<br>
+                <li>J'ai aussi appris la configuration de base d'un réseau (vlan, attribution adresse IP, configuraation de switch) ainsi que la résolution des dysfonctionement dans un réseau local</li>
+                <img src="{{asset('image/topologie.jpg')}}">  <img src="{{asset('image/config.jpg')}}">
+<br>
+                <li>Enfin j'ai aussi apppris comment créer un poste client dan sun systéme d'explotation tel que Linux ou Windows</li>
+                <img src="{{asset('image/Linux.jpg')}}">   <img src="{{asset('image/Linux2.jpg')}}">
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
